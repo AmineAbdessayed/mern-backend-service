@@ -5,6 +5,7 @@ const userLogout=require("../Controller/userlogout")
 const userDetails=require("../Controller/userDetails")
 const authToken=require("../Middleware/authToken");
 const AllUsers = require("../Controller/AllUsers");
+const UpdateUser = require("../Controller/UpdateUser");
 
 
 const router= express.Router()
@@ -16,5 +17,6 @@ router.get("/userLogout",userLogout)
 
 //admin 
 router.get("/allUsers", authToken,AllUsers)
+router.post("/updateUser", authToken,UpdateUser)
 
 module.exports=router
