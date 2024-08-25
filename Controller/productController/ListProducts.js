@@ -1,4 +1,4 @@
-const productModel=require("../Models/productModel")
+const productModel=require("../../Models/productModel")
 
 
 async function listProducts(req,res) {

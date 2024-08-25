@@ -6,9 +6,10 @@ const userDetails=require("../Controller/userDetails")
 const authToken=require("../Middleware/authToken");
 const AllUsers = require("../Controller/AllUsers");
 const UpdateUser = require("../Controller/UpdateUser");
-const UploadProductController=require("../Controller/UploatProduct")
-const listProducts=require("../Controller/ListProducts")
-const EditProduct=require("../Controller/EditProduct")
+const UploadProductController=require("../Controller/productController/UploatProduct")
+const listProducts=require("../Controller/productController/ListProducts")
+const EditProduct=require("../Controller/productController/EditProduct")
+const getCategoryProduct=require("../Controller/productController/getCategoryProduct")
 
 
 const router= express.Router()
@@ -27,5 +28,6 @@ router.post("/updateUser", authToken,UpdateUser)
 router.post("/AddProduct",authToken,UploadProductController)
 router.get("/listProducts",listProducts)
 router.post("/editProduct",authToken,EditProduct)
+router.get("/categoryProduct",getCategoryProduct)
 
 module.exports=router
