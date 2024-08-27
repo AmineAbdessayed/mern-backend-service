@@ -6,6 +6,7 @@ async function getCategoryProduct(req,res) {
 
         const categoryList= await productModel.distinct("category")
 
+        console.log("category",categoryList)
 
         const productCategory=[]
 
@@ -16,8 +17,12 @@ async function getCategoryProduct(req,res) {
             }
         }
         console.log("---------------",productCategory)
-        res.json(productCategory);
-
+        res.json({
+            message : "category product",
+            data : productCategory,
+            success : true,
+            error : false
+        })
 
 
     }catch(err){
