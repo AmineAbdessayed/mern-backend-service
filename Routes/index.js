@@ -11,6 +11,7 @@ const listProducts=require("../Controller/productController/ListProducts")
 const EditProduct=require("../Controller/productController/EditProduct")
 const getCategoryProduct=require("../Controller/productController/getCategoryProduct")
 const getOneProduct=require("../Controller/productController/getOneProduct")
+const GetProductDetails=require("../Controller/productController/GetProductDetails")
 
 
 const router= express.Router()
@@ -31,5 +32,7 @@ router.get("/listProducts",listProducts)
 router.post("/editProduct",authToken,EditProduct)
 router.get("/categoryProduct",getCategoryProduct)
 router.post("/OneProduct",getOneProduct)
+
+router.post("/productDetails",GetProductDetails)
 
 module.exports=router
