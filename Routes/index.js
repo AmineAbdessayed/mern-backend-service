@@ -12,6 +12,11 @@ const EditProduct=require("../Controller/productController/EditProduct")
 const getCategoryProduct=require("../Controller/productController/getCategoryProduct")
 const getOneProduct=require("../Controller/productController/getOneProduct")
 const GetProductDetails=require("../Controller/productController/GetProductDetails")
+const addToCart=require("../Controller/addToCartController")
+const CountAddToCart=require("../Controller/CountAddToCart")
+const GetProductCart=require("../Controller/GetProductCart")
+const updateCart=require("../Controller/updateCart")
+const DeleteCart=require("../Controller/DeleteCart")
 
 
 const router= express.Router()
@@ -34,5 +39,13 @@ router.get("/categoryProduct",getCategoryProduct)
 router.post("/OneProduct",getOneProduct)
 
 router.post("/productDetails",GetProductDetails)
+
+//Add to cart 
+
+router.post("/addToCart", authToken,addToCart)
+router.get("/countAddToCart", authToken,CountAddToCart)
+router.get("/viewProducts", authToken,GetProductCart)
+router.post("/updateCart", authToken,updateCart)
+router.post("/DeleteCart", authToken,DeleteCart)
 
 module.exports=router
