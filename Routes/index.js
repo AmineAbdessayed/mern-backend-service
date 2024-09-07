@@ -19,6 +19,7 @@ const updateCart=require("../Controller/updateCart")
 const DeleteCart=require("../Controller/DeleteCart")
 const SearchProduct=require("../Controller/SearchProduct")
 const FilterProduct=require("../Controller/productController/FilterProduct")
+const paymentController=require("../Controller/Payment/paymentController")
 
 
 const router= express.Router()
@@ -52,4 +53,8 @@ router.get("/viewProducts", authToken,GetProductCart)
 router.post("/updateCart", authToken,updateCart)
 router.post("/DeleteCart", authToken,DeleteCart)
 
+
+//payment 
+
+router.post("/checkout", authToken,paymentController)
 module.exports=router
